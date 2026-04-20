@@ -1,0 +1,483 @@
+<div id="nav-container">
+        <nav class="nav" id="nav">
+            <div class="nav-inner">
+                <a href="/" class="logo"><span>Moll</span>AI</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/" class="nav-link-text-flip active"><span class="flip-text-clip"><span
+                                    class="flip-text"><span class="text-original">Главная</span><span
+                                        class="text-hover">Главная</span></span></span></a></li>
+                    <li><a href="/pages/blog" class="nav-link-text-flip"><span class="flip-text-clip"><span
+                                    class="flip-text"><span class="text-original">Блог</span><span
+                                        class="text-hover">Блог</span></span></span></a></li>
+                    <li><a href="/pages/portfolio" class="nav-link-text-flip"><span class="flip-text-clip"><span
+                                    class="flip-text"><span class="text-original">Портфолио</span><span
+                                        class="text-hover">Портфолио</span></span></span></a></li>
+                    <li><a href="/pages/pricing" class="nav-link-text-flip"><span class="flip-text-clip"><span
+                                    class="flip-text"><span class="text-original">Цены</span><span
+                                        class="text-hover">Цены</span></span></span></a></li>
+                    <li><a href="/pages/shop" class="nav-link-text-flip"><span class="flip-text-clip"><span
+                                    class="flip-text"><span class="text-original">Магазин</span><span
+                                        class="text-hover">Магазин</span></span></span></a></li>
+                    <li><a href="/pages/about" class="nav-link-text-flip"><span class="flip-text-clip"><span
+                                    class="flip-text"><span class="text-original">О нас</span><span
+                                        class="text-hover">О нас</span></span></span></a></li>
+                    <li><a href="/pages/about#contacts" class="nav-cta">Консультация</a></li>
+                </ul>
+                <div class="burger" id="burger" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="container">
+                <div class="hero-content" id="hero-content">
+                    <div class="section-label hero-word" style="--d:0">Web Studio</div>
+                    <h1>
+                        <span class="hero-word" style="--d:1">AI-решения,</span>
+                        <span class="hero-word" style="--d:2">которые</span>
+                        <span class="hero-word highlight-wrapper" style="--d:3"><span class="highlight fade-out"
+                                id="rotating-text">развивают</span></span>
+                        <span class="hero-word hero-word-vas" style="--d:4">ваш</span>
+                        <br><span class="hero-word" style="--d:5">бизнес</span>
+                    </h1>
+                    <p class="subtitle hero-word" style="--d:6">Премиальные сайты. Умные боты. Автоматизация процессов.
+                        Всё под ключ - без головной боли.</p>
+                    <div class="hero-buttons"
+                        style="opacity:0;animation:word-in 0.5s cubic-bezier(0.16,1,0.3,1) 0.9s forwards">
+                        <a href="/pages/pricing" class="btn btn-secondary">Посмотреть цены
+                            →</a>
+                        <a href="/pages/about#contacts" class="btn btn-primary hvr-float-shadow">✱
+                            Записаться на консультацию</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Image Left (mask zone) -->
+            <div class="hero-mask-zone hero-mask-zone--left" id="zone1">
+                <img class="base-img" src="/assets/images/image-1.png" alt="MollAI — AI-решения для бизнеса" loading="eager">
+                <img class="reveal-img" src="/assets/images/image-2.png" alt="MollAI — автоматизация процессов">
+            </div>
+            <!-- Hero Image Right (mask zone) -->
+            <div class="hero-mask-zone hero-mask-zone--right" id="zone2">
+                <img class="base-img" src="/assets/images/image-4.png" alt="MollAI — веб-разработка и дизайн" loading="eager">
+                <img class="reveal-img" src="/assets/images/image-3.png" alt="MollAI — AI-автоматизации для бизнеса"
+                    style="--mx: 10.5767578125%; --my: 7.2176666259765625%; --mr: 0.46453298004790483px; --blur: 30px;">
+            </div>
+        </section>
+
+        <!-- What We Do -->
+        <section id="services">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-label">Услуги</div>
+                    <h2>Наши услуги</h2>
+                    <p class="section-desc">Полный стек цифровых решений для современного бизнеса</p>
+                </div>
+                <div class="services-grid-2x2">
+
+                    <!-- Service 1: Web -->
+                    <div class="service-detail shadow-reveal sync-row-1">
+                        <div class="card-accent red"></div>
+                        <div class="card-icon red">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3>Премиальные сайты</h3>
+                        <p class="description">Сайт — это ваша витрина 24/7. Мы создаём полноценные инструменты продаж,
+                            проектируемые с нуля без шаблонов.</p>
+                        <div class="service-features-list" style="margin-top: auto;">
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Уникальный
+                                    дизайн</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Адаптивность
+                                    (Mobile First)</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">
+                                    SEO-подготовка</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2: AI Bots -->
+                    <div class="service-detail shadow-reveal sync-row-1">
+                        <div class="card-accent green"></div>
+                        <div class="card-icon green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="10" rx="2" />
+                                <circle cx="12" cy="5" r="2" />
+                                <path d="M12 7v4" />
+                                <line x1="8" y1="16" x2="8" y2="16.01" />
+                                <line x1="16" y1="16" x2="16" y2="16.01" />
+                                <path d="M1 15h2" />
+                                <path d="M21 15h2" />
+                            </svg>
+                        </div>
+                        <h3>AI-боты и ассистенты</h3>
+                        <p class="description">Чат-боты, которые работают за вас: отвечают клиентам, квалифицируют лиды
+                            и записывают на встречи 24/7.</p>
+                        <div class="service-features-list" style="margin-top: auto;">
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Обучен на
+                                    ваших данных</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Интеграция с
+                                    мессенджерами</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Автономная
+                                    квалификация</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Automation -->
+                    <div class="service-detail shadow-reveal sync-row-2">
+                        <div class="card-accent purple"></div>
+                        <div class="card-icon purple">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z" />
+                            </svg>
+                        </div>
+                        <h3>Бизнес-автоматизация</h3>
+                        <p class="description">Связываем ваши инструменты в единую экосистему: Заявка → CRM →
+                            Уведомление. Без ручной работы.</p>
+                        <div class="service-features-list" style="margin-top: auto;">
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Автоматизация
+                                    n8n</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Синхронизация
+                                    CRM</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Умные
+                                    уведомления</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Content & Ads -->
+                    <div class="service-detail shadow-reveal sync-row-2">
+                        <div class="card-accent orange"></div>
+                        <div class="card-icon orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <h3>AI-контент и Продвижение</h3>
+                        <p class="description">Наполняем ваш сайт смыслом и приводим клиентов. От контент-стратегии до
+                            настройки Google / FB Ads.</p>
+                        <div class="service-features-list" style="margin-top: auto;">
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Генерация
+                                    статей через AI</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Настройка
+                                    контекстной рекламы</h4>
+                            </div>
+                            <div class="service-feature-item"
+                                style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
+                                <span class="check"
+                                    style="color: var(--accent-green); font-weight: 800; font-size: 18px; line-height: 1;">&#10003;</span>
+                                <h4 style="font-size: 15px; font-weight: 600; color: var(--text-primary);">Аналитика
+                                    окупаемости (ROI)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="process">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-label">Как это работает</div>
+                    <h2>Три шага к результату</h2>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card shadow-reveal stagger-1">
+                        <div class="step-number red">1</div>
+                        <h3>Консультация</h3>
+                        <p>Бесплатно обсуждаем ваши процессы и находим точки роста</p>
+                    </div>
+                    <div class="step-card shadow-reveal stagger-2">
+                        <div class="step-number green">2</div>
+                        <h3>Проектирование</h3>
+                        <p>Создаём план - что автоматизируем, какой бот нужен, как выглядит сайт</p>
+                    </div>
+                    <div class="step-card shadow-reveal stagger-3">
+                        <div class="step-number orange">3</div>
+                        <h3>Запуск и поддержка</h3>
+                        <p>Внедряем, тестируем, обучаем. Вы не остаётесь один - мы рядом</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us -->
+        <section id="why-us" style="padding-top: 60px; padding-bottom: 30px;">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Почему мы</div>
+                    <h2>Наши преимущества</h2>
+                </div>
+                <div class="why-grid">
+                    <div class="why-item shadow-reveal stagger-1">
+                        <div class="why-check red">✓</div>
+                        <div>
+                            <h4>Не шаблоны</h4>
+                            <p>Каждое решение индивидуально - под ваш бизнес, под ваши процессы</p>
+                        </div>
+                    </div>
+                    <div class="why-item shadow-reveal stagger-2">
+                        <div class="why-check green">✓</div>
+                        <div>
+                            <h4>Говорим понятно</h4>
+                            <p>Без технического жаргона - объясняем так, чтобы было ясно</p>
+                        </div>
+                    </div>
+                    <div class="why-item shadow-reveal stagger-3">
+                        <div class="why-check orange">✓</div>
+                        <div>
+                            <h4>Под ключ</h4>
+                            <p>Вы получаете результат, а не проблему. Мы закрываем всё</p>
+                        </div>
+                    </div>
+                    <div class="why-item shadow-reveal stagger-4">
+                        <div class="why-check purple">✓</div>
+                        <div>
+                            <h4>Поддержка после запуска</h4>
+                            <p>Не исчезаем после оплаты - помогаем и дорабатываем</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section id="stats-home" style="padding-top: 10px; padding-bottom: 10px;">
+            <div class="container">
+                <div class="stats-bar" style="margin: 20px 0;">
+                    <div class="stat-item shadow-reveal stagger-1">
+                        <div class="stat-number red">100%</div>
+                        <div class="stat-label">AI First подход</div>
+                    </div>
+                    <div class="stat-item shadow-reveal stagger-2">
+                        <div class="stat-number green">0%</div>
+                        <div class="stat-label">Готовых шаблонов</div>
+                    </div>
+                    <div class="stat-item shadow-reveal stagger-3">
+                        <div class="stat-number orange">90+</div>
+                        <div class="stat-label">Performance Score</div>
+                    </div>
+                    <div class="stat-item shadow-reveal stagger-4">
+                        <div class="stat-number purple">3</div>
+                        <div class="stat-label">Языка поддержки</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" style="padding-top: 40px;">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-label">Отзывы</div>
+                    <h2>Что говорят клиенты</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="testimonial-card shadow-reveal stagger-1">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Рабовали с MollAI над моим портфолио. Потрясающее внимание к
+                            деталям в Web3-интерфейсе и очень плавная анимация. Ребята понимают специфику
+                            крипто-индустрии и умеют делать 'дорогой' визуал."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar red">FT</div>
+                            <div>
+                                <div class="testimonial-name">Tokyo </div>
+                                <div class="testimonial-role">Web3 Contributor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card shadow-reveal stagger-2">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Заказывали Telegram-бота для обработки заявок. Бот работает в
+                            фоновом режиме, клиенты получают ответы мгновенно. Всё приватно, защищено и реально экономит
+                            нам время каждый день."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar green">И</div>
+                            <div>
+                                <div class="testimonial-name">Ион С.</div>
+                                <div class="testimonial-role">Партнер в логистике</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card shadow-reveal stagger-3">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Помогли запустить контент-стратегию. Минимум правок, тексты на трёх
+                            языках звучат естественно и профессионально. Теперь сайт выглядит живым, а мы не тратим часы
+                            на копирайтинг."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar purple">Е</div>
+                            <div>
+                                <div class="testimonial-name">Елена В.</div>
+                                <div class="testimonial-role">Основатель бренда</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" style="padding-top: 0;">
+            <div class="container">
+                <div class="cta-section">
+                    <h2>Готовы перестать терять время на рутину?</h2>
+                    <p>Бесплатная консультация - 30 минут, которые могут изменить ваш бизнес</p>
+                    <a href="/pages/about#contacts" class="btn btn-primary hvr-float-shadow">✱
+                        Записаться на консультацию</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header center">
+                    <div class="section-label">FAQ</div>
+                    <h2>Частые вопросы</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item shadow-reveal stagger-1">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Зачем мне AI-бот на сайте?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">AI-бот отвечает клиентам мгновенно 24/7,
+                                даже когда вы спите. Он квалифицирует заявки, записывает
+                                клиентов на встречи и отвечает на частые вопросы.
+                                В среднем бот обрабатывает до 70% обращений без участия человека.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item shadow-reveal stagger-2">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Зачем мне автоматизация процессов?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Автоматизация связывает ваши инструменты
+                                в единую систему. Например: заявка с сайта автоматически
+                                попадает в CRM, менеджер получает уведомление в Telegram,
+                                а клиент — письмо с подтверждением.
+                                Без ручной работы и ошибок.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item shadow-reveal stagger-3">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Сколько времени занимает создание сайта?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Лендинг — 3-5 рабочих дней.
+                                Многостраничный сайт — 2-3 недели. Комплексный проект
+                                с ботом и автоматизацией — 3-4 недели.
+                                Точные сроки обсуждаем на консультации.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item shadow-reveal stagger-4">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Вы работаете только с Молдовой?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Нет! Мы работаем удалённо с клиентами из любой страны.
+                                Мультиязычность и понимание международных рынков - наша сильная сторона. Но наш офис в
+                                Кишинёве, и мы активно помогаем местному бизнесу.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item shadow-reveal stagger-5">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <span>Мне точно нужен весь этот AI, если я маленький бизнес?</span>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Именно маленький бизнес выигрывает больше всего. AI-бот
+                                заменяет второго сотрудника, автоматизация освобождает часы рутины, а хороший сайт
+                                приносит заявки, пока вы занимаетесь другими делами. Мы подбираем решение под ваш
+                                масштаб и бюджет.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer-container">
+            <footer class="footer">
+                <div class="footer-divider-line"></div>
+                <div class="container">
+                    <div class="footer-inner">
+                        <p>© 2026 MollAI. Все права защищены.</p>
+                        <a href="/pages/privacy">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Back to Top -->
+        <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+    </main>
