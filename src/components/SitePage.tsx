@@ -21,38 +21,36 @@ type Props = {
 
 const BASE_SCRIPTS = ["/js/nav.js", "/js/main.js", "/chat/ai-chat.js"];
 
-// Track which script URLs have been injected, so we don't re-add <script> tags.
-const injected = new Set<string>();
+// Cache script source so we don't re-fetch on every navigation.
+const scriptCache = new Map<string, Promise<string>>();
+
+function fetchScript(src: string): Promise<string> {
+  let p = scriptCache.get(src);
+  if (!p) {
+    p = fetch(src).then((r) => r.text());
+    scriptCache.set(src, p);
+  }
+  return p;
+}
 
 function runScript(src: string): Promise<void> {
-  return new Promise((resolve) => {
-    if (injected.has(src)) {
-      // Re-execute by re-fetching and eval'ing, so DOMContentLoaded handlers
-      // re-bind after route change.
-      fetch(src)
-        .then((r) => r.text())
-        .then((code) => {
-          try {
-            // eslint-disable-next-line no-new-func
-            new Function(code)();
-          } catch (e) {
-            console.error("Failed to re-run script", src, e);
-          }
-          resolve();
-        })
-        .catch(() => resolve());
-      return;
-    }
-    const s = document.createElement("script");
-    s.src = src;
-    s.async = false;
-    s.onload = () => {
-      injected.add(src);
-      resolve();
-    };
-    s.onerror = () => resolve();
-    document.body.appendChild(s);
-  });
+  return fetchScript(src)
+    .then((code) => {
+      try {
+        // Execute in an isolated function scope so `const` / `let` declarations
+        // don't collide on re-execution after client-side navigation.
+        // Using indirect eval would pollute the global scope; new Function
+        // gives us a fresh lexical scope while still letting the script
+        // attach things to `window` explicitly when it needs to.
+        // eslint-disable-next-line no-new-func
+        new Function(code)();
+      } catch (e) {
+        console.error("Failed to run script", src, e);
+      }
+    })
+    .catch((e) => {
+      console.error("Failed to fetch script", src, e);
+    });
 }
 
 function fireDomReady() {
