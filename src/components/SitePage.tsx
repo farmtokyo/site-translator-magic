@@ -19,7 +19,7 @@ type Props = {
   title?: string;
 };
 
-const BASE_SCRIPTS = ["/js/nav.js", "/js/main.js", "/chat/ai-chat.js", "/js/i18n.js"];
+const BASE_SCRIPTS = ["/js/nav.js", "/js/main.js", "/chat/ai-chat.js", "/js/i18n.js", "/js/theme.js"];
 
 // Cache script source so we don't re-fetch on every navigation.
 const scriptCache = new Map<string, Promise<string>>();
@@ -128,6 +128,13 @@ export default function SitePage({ htmlPath, extraScripts = [], title }: Props) 
       try {
         // @ts-expect-error injected by /js/i18n.js
         if (window.MollaiI18n) window.MollaiI18n.apply();
+      } catch {
+        /* noop */
+      }
+      // Re-apply current theme (re-attaches sticky button if missing)
+      try {
+        // @ts-expect-error injected by /js/theme.js
+        if (window.MollaiTheme) window.MollaiTheme.apply();
       } catch {
         /* noop */
       }
