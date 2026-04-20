@@ -44,8 +44,9 @@
       'Site-uri premium. Boți inteligenți. Automatizarea proceselor. Totul la cheie — fără bătăi de cap.',
     'Посмотреть цены\n                            →': 'Vezi prețurile →',
     'Посмотреть цены →': 'Vezi prețurile →',
-    '✱\n                            Записаться на консультацию': '✱ Programează o consultație',
-    '✱ Записаться на консультацию': '✱ Programează o consultație',
+    '✱\n                            Записаться на консультацию': '✱ Rezervă o consultație',
+    '✱ Записаться на консультацию': '✱ Rezervă o consultație',
+    'Записаться на консультацию': 'Rezervă o consultație',
 
     // ===== Home: Services =====
     'Услуги': 'Servicii',
