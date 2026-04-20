@@ -44,8 +44,9 @@
       'Site-uri premium. Boți inteligenți. Automatizarea proceselor. Totul la cheie — fără bătăi de cap.',
     'Посмотреть цены\n                            →': 'Vezi prețurile →',
     'Посмотреть цены →': 'Vezi prețurile →',
-    '✱\n                            Записаться на консультацию': '✱ Programează o consultație',
-    '✱ Записаться на консультацию': '✱ Programează o consultație',
+    '✱\n                            Записаться на консультацию': '✱ Rezervă o consultație',
+    '✱ Записаться на консультацию': '✱ Rezervă o consultație',
+    'Записаться на консультацию': 'Rezervă o consultație',
 
     // ===== Home: Services =====
     'Услуги': 'Servicii',
@@ -388,9 +389,20 @@
       'Scuze, a apărut o eroare. Încearcă mai târziu.',
   };
 
-  // Build reverse map for RO → RU when switching back
-  const REV = {};
-  Object.keys(DICT).forEach((k) => { REV[DICT[k]] = k; });
+  // Normalize: collapse all whitespace (incl. newlines) to single spaces, trim, lowercase.
+  // This lets us match strings regardless of how they're broken across lines in HTML.
+  function norm(s) {
+    return s.replace(/\s+/g, ' ').trim().toLowerCase();
+  }
+
+  // Normalized lookup maps. Key = norm(source), value = target (in original case).
+  const RU2RO = {};
+  const RO2RU = {};
+  Object.keys(DICT).forEach((ru) => {
+    const ro = DICT[ru];
+    RU2RO[norm(ru)] = ro;
+    RO2RU[norm(ro)] = ru;
+  });
 
   function getLang() {
     return localStorage.getItem(LS_KEY) === 'ro' ? 'ro' : 'ru';
@@ -406,17 +418,15 @@
 
   function translateText(raw, map) {
     if (!raw) return raw;
-    // Try exact trim match first
     const trimmed = raw.trim();
     if (!trimmed) return raw;
-    const hit = map[trimmed];
-    if (hit !== undefined) {
-      // Preserve surrounding whitespace
-      const leading = raw.match(/^\s*/)[0];
-      const trailing = raw.match(/\s*$/)[0];
-      return leading + hit + trailing;
-    }
-    return raw;
+    const key = norm(raw);
+    const hit = map[key];
+    if (hit === undefined) return raw;
+    // Preserve surrounding whitespace from the original node
+    const leading = raw.match(/^\s*/)[0];
+    const trailing = raw.match(/\s*$/)[0];
+    return leading + hit + trailing;
   }
 
   function walk(node, map) {
@@ -459,12 +469,11 @@
 
   let applying = false;
   function applyLang(lang) {
-    const targetMap = lang === 'ro' ? DICT : REV;
+    const targetMap = lang === 'ro' ? RU2RO : RO2RU;
     applying = true;
     try {
       walk(document.body, targetMap);
     } finally {
-      // Allow mutations from translation itself to settle before observing again
       setTimeout(() => { applying = false; }, 0);
     }
   }
@@ -566,7 +575,7 @@
       if (roots.size === 0) return;
       applying = true;
       try {
-        roots.forEach((n) => walk(n, DICT));
+        roots.forEach((n) => walk(n, RU2RO));
       } finally {
         setTimeout(() => { applying = false; }, 0);
       }
