@@ -574,7 +574,7 @@
       if (roots.size === 0) return;
       applying = true;
       try {
-        roots.forEach((n) => walk(n, DICT));
+        roots.forEach((n) => walk(n, RU2RO));
       } finally {
         setTimeout(() => { applying = false; }, 0);
       }
