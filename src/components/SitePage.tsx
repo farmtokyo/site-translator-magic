@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 /**
  * Renders a static HTML page from /public/site/* and runs the original
@@ -65,11 +65,40 @@ function fireDomReady() {
 
 export default function SitePage({ htmlPath, extraScripts = [], title }: Props) {
   const location = useLocation();
+  const navigate = useNavigate();
   const [html, setHtml] = useState<string>("");
 
   useEffect(() => {
     if (title) document.title = title;
   }, [title]);
+
+  // Intercept clicks on internal links so we use React Router navigation
+  // instead of full-page reloads.
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented) return;
+      if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      const target = e.target as HTMLElement | null;
+      const link = target?.closest("a");
+      if (!link) return;
+      const href = link.getAttribute("href");
+      if (!href) return;
+      if (link.target && link.target !== "_self") return;
+      if (
+        href.startsWith("http") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        href.startsWith("#")
+      ) {
+        return;
+      }
+      // Internal link — route via React Router
+      e.preventDefault();
+      navigate(href);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [navigate]);
 
   // Load the static HTML for this route
   useEffect(() => {
