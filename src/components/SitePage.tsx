@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 /**
@@ -67,7 +67,6 @@ function fireDomReady() {
 
 export default function SitePage({ htmlPath, extraScripts = [], title }: Props) {
   const location = useLocation();
-  const containerRef = useRef<HTMLDivElement>(null);
   const [html, setHtml] = useState<string>("");
 
   useEffect(() => {
@@ -114,7 +113,7 @@ export default function SitePage({ htmlPath, extraScripts = [], title }: Props) 
   return (
     <>
       <div id="nav-container" />
-      <div ref={containerRef} dangerouslySetInnerHTML={{ __html: html }} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   );
 }
