@@ -406,7 +406,7 @@ h3 {
 ═══════════════════════════════════════════ */
 .hero {
     min-height: 100vh;
-    padding-top: 150px;
+    padding-top: 75px;
     padding-bottom: 70px;
     position: relative;
     overflow: hidden;
