@@ -468,12 +468,11 @@
 
   let applying = false;
   function applyLang(lang) {
-    const targetMap = lang === 'ro' ? DICT : REV;
+    const targetMap = lang === 'ro' ? RU2RO : RO2RU;
     applying = true;
     try {
       walk(document.body, targetMap);
     } finally {
-      // Allow mutations from translation itself to settle before observing again
       setTimeout(() => { applying = false; }, 0);
     }
   }
