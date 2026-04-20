@@ -14,6 +14,7 @@ function toggleFaq(el) {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!wasOpen) item.classList.add('open');
 }
+window.toggleFaq = toggleFaq;
 
 // ═══════════════════════════════════════════
 // MOBILE MENU
@@ -21,6 +22,7 @@ function toggleFaq(el) {
 function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
 }
+window.toggleMenu = toggleMenu;
 
 // ═══════════════════════════════════════════
 // PAGE TRANSITIONS — disabled in React build.
