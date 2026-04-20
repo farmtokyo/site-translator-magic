@@ -19,7 +19,7 @@ type Props = {
   title?: string;
 };
 
-const BASE_SCRIPTS = ["/js/nav.js", "/js/main.js", "/chat/ai-chat.js"];
+const BASE_SCRIPTS = ["/js/nav.js", "/js/main.js", "/chat/ai-chat.js", "/js/i18n.js"];
 
 // Cache script source so we don't re-fetch on every navigation.
 const scriptCache = new Map<string, Promise<string>>();
@@ -124,6 +124,13 @@ export default function SitePage({ htmlPath, extraScripts = [], title }: Props) 
         await runScript(src);
       }
       if (!cancelled) fireDomReady();
+      // Re-apply current language to freshly rendered HTML
+      try {
+        // @ts-expect-error injected by /js/i18n.js
+        if (window.MollaiI18n) window.MollaiI18n.apply();
+      } catch {
+        /* noop */
+      }
       // Scroll to hash if present
       if (location.hash) {
         const el = document.getElementById(location.hash.slice(1));
