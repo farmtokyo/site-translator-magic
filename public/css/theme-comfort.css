@@ -150,14 +150,29 @@ html[data-theme="comfort"] main > section > .container {
     margin-top: 24px;
     margin-bottom: 24px;
 }
-/* Hero — самая большая плита */
+/* Hero — самая большая плита.
+   Сбрасываем оригинальные min-height:100vh и большие paddings,
+   чтобы под плитой не было огромного пустого места. */
 html[data-theme="comfort"] .hero {
+    min-height: 0 !important;
     padding-top: 120px;
+    padding-bottom: 40px;
+    overflow: hidden; /* отрезаем 3D объекты, выходящие за пределы плиты */
 }
 html[data-theme="comfort"] .hero > .container {
     padding: 80px 48px;
     border-radius: 48px;
     overflow: hidden;
+}
+/* Жёстко прячем оригинальные hero-маски (картинки image-1..4) */
+html[data-theme="comfort"] .hero .hero-mask-zone,
+html[data-theme="comfort"] .hero-mask-zone,
+html[data-theme="comfort"] .hero-mask-zone--left,
+html[data-theme="comfort"] .hero-mask-zone--right {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 @media (max-width: 768px) {
