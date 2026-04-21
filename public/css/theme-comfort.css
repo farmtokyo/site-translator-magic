@@ -176,13 +176,60 @@ html[data-theme="comfort"] .hero-mask-zone--right {
 }
 
 @media (max-width: 768px) {
+    /* Плиты — меньше внутренних отступов и компактнее между собой */
     html[data-theme="comfort"] main > section > .container {
-        padding: 40px 24px;
-        border-radius: 28px;
+        padding: 32px 20px;
+        border-radius: 24px;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+    /* Hero на мобильном: убираем огромный верхний отступ и пустоту снизу */
+    html[data-theme="comfort"] .hero {
+        padding-top: 80px !important;
+        padding-bottom: 16px !important;
     }
     html[data-theme="comfort"] .hero > .container {
-        padding: 56px 24px;
-        border-radius: 28px;
+        padding: 36px 20px;
+        border-radius: 24px;
+        margin-top: 0;
+    }
+    /* Page-hero (внутренние страницы — about, blog, shop, portfolio, pricing) */
+    html[data-theme="comfort"] .page-hero {
+        padding-top: 80px !important;
+        padding-bottom: 16px !important;
+        min-height: 0 !important;
+    }
+    html[data-theme="comfort"] .page-hero > .container {
+        padding: 36px 20px;
+        border-radius: 24px;
+    }
+    /* Навбар — pill, помещающийся в экран с боковыми отступами */
+    html[data-theme="comfort"] .nav-inner {
+        height: 56px;
+        padding: 0 8px 0 16px;
+        margin: 0 12px;
+    }
+    html[data-theme="comfort"] .logo {
+        font-size: 20px;
+    }
+    /* Карточки внутри плит — без двойных отступов */
+    html[data-theme="comfort"] .service-detail,
+    html[data-theme="comfort"] .step-card,
+    html[data-theme="comfort"] .why-item,
+    html[data-theme="comfort"] .pricing-card,
+    html[data-theme="comfort"] .portfolio-card,
+    html[data-theme="comfort"] .blog-card,
+    html[data-theme="comfort"] .product-card,
+    html[data-theme="comfort"] article.card,
+    html[data-theme="comfort"] .faq-item {
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+    /* Заголовки чуть компактнее */
+    html[data-theme="comfort"] .hero h1,
+    html[data-theme="comfort"] .page-hero h1 {
+        font-size: clamp(32px, 8vw, 44px);
+        line-height: 1.1;
     }
 }
 
